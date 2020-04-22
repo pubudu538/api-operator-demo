@@ -17,13 +17,26 @@ helm install nfs-provisioner stable/nfs-server-provisioner
 
 #### Deploy Artifacts
 
-```
->> kubectl apply -f artifacts/1_wso2-namespace.yaml -f artifacts/2_mysql/ -f artifacts/3_configmaps/
+- Intall WSO2AM Operator, configure MySQL and deploy config maps
+    
+    ```
+    kubectl apply -f k8s-wso2am-operator-1.0.0/artifacts/operator-artifacts/ -f k8s-wso2am-operator-1.0.0/artifacts/operator-configs/ -f k8s-wso2am-operator-1.0.0/artifacts/api-manager-artifacts/pattern-1/
+    
+    kubectl apply -f artifacts/1_wso2-namespace.yaml -f artifacts/2_mysql/ -f artifacts/3_configmaps/
+    ```
+    Wait for few seconds until Mysql pod is ready
 
-Wait for few seconds until Mysql pod is ready
+- Use WSO2 email and password to create a docker secret for image pulling
 
->> kubectl apply -f artifacts/4_pvcs.yaml -f artifacts/5_custom-pattern.yaml
-```
+    ```
+    kubectl create secret docker-registry wso2am-secret --docker-server=docker.wso2.com --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+    ```
+
+- Deploy API Manager with Analytics
+
+    ```
+    kubectl apply -f artifacts/4_pvcs.yaml -f artifacts/5_custom-pattern.yaml
+    ```
 
 <br>
 
