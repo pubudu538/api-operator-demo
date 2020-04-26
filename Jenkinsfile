@@ -5,7 +5,7 @@ pipeline {
    environment{
       INT_FILE = fileExists "onlinestore-api/Interceptors"
       LIB_FILE = fileExists "onlinestore-api/libs"
-      APINAME = "newsample"
+      APINAME = "onlinestore-api"
    }
    
    stages {
