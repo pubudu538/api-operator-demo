@@ -26,6 +26,12 @@ helm install nfs-provisioner stable/nfs-server-provisioner
     ```
     Wait for few seconds until Mysql pod is ready
 
+- Use WSO2 email and password to create a docker secret for image pulling
+
+    ```
+    kubectl create secret docker-registry wso2am-secret --docker-server=docker.wso2.com --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+    ```
+
 - Deploy API Manager with Analytics
 
     ```
