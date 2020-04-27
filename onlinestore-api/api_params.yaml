@@ -1,0 +1,7 @@
+environments:
+  - name: k8s
+    endpoints:
+      production:
+        url:
+      sandbox:
+        url:
