@@ -6,7 +6,7 @@ pipeline {
       INT_FILE = fileExists "onlinestore-api/Interceptors"
       LIB_FILE = fileExists "onlinestore-api/libs"
       APINAME = "onlinestore-api"
-      REPO="dinusha92/api-operator-demo"
+      REPO="pubudu538/api-operator-demo"
    }
    
    stages {
