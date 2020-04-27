@@ -90,30 +90,6 @@ paths:
         security-types:
          - oauth2
         optional: false
-  /products/{productId}:
-    get:
-      parameters:
-       -
-        name: productId
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          format: string
-      responses:
-        200:
-          description: ok
-      security:
-       -
-        default: []
-      x-auth-type: Application & Application User
-      x-throttling-tier: null
-      x-wso2-application-security:
-        security-types:
-         - oauth2
-        optional: false
 components:
   securitySchemes:
     default:
