@@ -3,89 +3,98 @@ info:
   title: onlinestore-api
   version: v1.0
 servers:
-- url: /
+ -
+  url: /
 security:
-- default: []
+ -
+  default: []
 paths:
   /*:
     get:
       responses:
-        "200":
+        200:
           description: OK
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
     put:
       responses:
-        "200":
+        200:
           description: OK
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
     post:
       responses:
-        "200":
+        200:
           description: OK
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
     delete:
       responses:
-        "200":
+        200:
           description: OK
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
     patch:
       responses:
-        "200":
+        200:
           description: OK
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
   /products:
     get:
       parameters: []
       responses:
-        "200":
+        200:
           description: ok
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: null
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
   /products/{productId}:
     get:
       parameters:
-      - name: productId
+       -
+        name: productId
         in: path
         required: true
         style: simple
@@ -94,15 +103,16 @@ paths:
           type: string
           format: string
       responses:
-        "200":
+        200:
           description: ok
       security:
-      - default: []
+       -
+        default: []
       x-auth-type: Application & Application User
       x-throttling-tier: null
       x-wso2-application-security:
         security-types:
-        - oauth2
+         - oauth2
         optional: false
 components:
   securitySchemes:
@@ -116,33 +126,33 @@ x-wso2-auth-header: Authorization
 x-wso2-cors:
   corsConfigurationEnabled: false
   accessControlAllowOrigins:
-  - '*'
+   - '*'
   accessControlAllowCredentials: false
   accessControlAllowHeaders:
-  - authorization
-  - Access-Control-Allow-Origin
-  - Content-Type
-  - SOAPAction
-  - apikey
+   - authorization
+   - Access-Control-Allow-Origin
+   - Content-Type
+   - SOAPAction
+   - apikey
   accessControlAllowMethods:
-  - GET
-  - PUT
-  - POST
-  - DELETE
-  - PATCH
-  - OPTIONS
+   - GET
+   - PUT
+   - POST
+   - DELETE
+   - PATCH
+   - OPTIONS
 x-wso2-production-endpoints:
   urls:
-  - http://products
+   - http://products
   type: http
 x-wso2-sandbox-endpoints:
   urls:
-  - http://products
+   - http://products
   type: http
 x-wso2-basePath: /store/v1.0
 x-wso2-transports:
-- http
-- https
+ - http
+ - https
 x-wso2-response-cache:
   enabled: false
   cacheTimeoutInSeconds: 300
