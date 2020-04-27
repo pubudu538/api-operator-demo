@@ -12,8 +12,8 @@ pipeline {
    stages {
       stage('Preparation') {   
          steps{
-               git branch: 'onlinestore-api',
-               url: 'https://github.com/dinusha92/test.git',
+               git branch: "$APINAME",
+               url: "https://github.com/${REPO}.git",
                credentialsId: 'github-dinusha'
          }
       }
