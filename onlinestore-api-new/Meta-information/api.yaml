@@ -1,0 +1,31 @@
+id:
+  providerName: admin
+  apiName: onlinestore-api
+  version: v1.0
+type: HTTP
+context: /store/v1.0/v1.0
+contextTemplate: /store/v1.0/{version}
+availableTiers:
+- name: Unlimited
+status: CREATED
+visibility: public
+transports: http,https
+corsConfiguration:
+  corsConfigurationEnabled: true
+  accessControlAllowOrigins:
+  - '*'
+  accessControlAllowHeaders:
+  - authorization
+  - Access-Control-Allow-Origin
+  - Content-Type
+  - SOAPAction
+  - apikey
+  accessControlAllowMethods:
+  - GET
+  - PUT
+  - POST
+  - DELETE
+  - PATCH
+  - OPTIONS
+endpointConfig: '{"endpoint_type":"http","production_endpoints":{"url":"http://products","config":null},"sandbox_endpoints":{"url":"http://products","config":null}}'
+isDefaultVersion: true
