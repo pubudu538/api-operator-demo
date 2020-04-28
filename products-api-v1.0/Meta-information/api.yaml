@@ -8,7 +8,7 @@ context: /product/v1.0
 contextTemplate: /product/{version}
 tags: []
 documents: []
-lastUpdated: Apr 28, 2020, 12:08:52 PM
+lastUpdated: Apr 28, 2020, 12:17:58 PM
 availableTiers:
  -
   name: Unlimited
@@ -24,7 +24,7 @@ availableSubscriptionLevelPolicies: []
 uriTemplates: []
 apiHeaderChanged: false
 apiResourcePatternsChanged: false
-status: CREATED
+status: PUBLISHED
 visibility: public
 gatewayLabels: []
 endpointSecured: false
@@ -74,4 +74,4 @@ enableSchemaValidation: false
 apiCategories: []
 accessControl: all
 rating: 0.0
-isLatest: false
+isLatest: true
