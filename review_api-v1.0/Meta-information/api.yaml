@@ -1,14 +1,14 @@
 id:
   providerName: admin
-  apiName: onlinestore-api
+  apiName: review_api
   version: v1.0
-uuid: 89225810-8c48-4ce5-afab-4d5c5544c993
+uuid: 5530d8ac-8452-4168-b98c-3e796c49dfc0
 type: HTTP
-context: /store/v1.0
-contextTemplate: /store/{version}
+context: /review/v1.0
+contextTemplate: /review/{version}
 tags: []
 documents: []
-lastUpdated: Apr 27, 2020, 9:51:47 AM
+lastUpdated: Apr 28, 2020, 7:05:09 AM
 availableTiers:
  -
   name: Unlimited
@@ -51,7 +51,7 @@ corsConfiguration:
    - DELETE
    - PATCH
    - OPTIONS
-endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/products"},"production_endpoints":{"url":"http:\/\/products"}}'
+endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/review-ep:8080"},"production_endpoints":{"url":"http:\/\/review-ep:8080"}}'
 responseCache: Disabled
 cacheTimeout: 300
 implementation: ENDPOINT
@@ -61,7 +61,7 @@ isDefaultVersion: false
 isPublishedDefaultVersion: false
 environments:
  - Production and Sandbox
-createdTime: "1587973327000"
+createdTime: "1587981906000"
 additionalProperties: {}
 monetizationProperties: {}
 isMonetizationEnabled: false

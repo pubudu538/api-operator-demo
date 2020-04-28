@@ -1,0 +1,77 @@
+openapi: 3.0.1
+info:
+  title: inventory-api
+  version: v1.0
+servers:
+ -
+  url: /
+security:
+ -
+  default: []
+paths:
+  /inventory/{productId}:
+    get:
+      parameters:
+       -
+        name: productId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
+      responses:
+        200:
+          description: ok
+      security:
+       -
+        default: []
+      x-auth-type: Application & Application User
+      x-throttling-tier: null
+      x-wso2-application-security:
+        security-types:
+         - oauth2
+        optional: false
+components:
+  securitySchemes:
+    default:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://test.com
+          scopes: {}
+x-wso2-auth-header: Authorization
+x-wso2-cors:
+  corsConfigurationEnabled: false
+  accessControlAllowOrigins:
+   - '*'
+  accessControlAllowCredentials: false
+  accessControlAllowHeaders:
+   - authorization
+   - Access-Control-Allow-Origin
+   - Content-Type
+   - SOAPAction
+   - apikey
+  accessControlAllowMethods:
+   - GET
+   - PUT
+   - POST
+   - DELETE
+   - PATCH
+   - OPTIONS
+x-wso2-production-endpoints:
+  urls:
+   - http://inventory-ep
+  type: http
+x-wso2-sandbox-endpoints:
+  urls:
+   - http://inventory-ep
+  type: http
+x-wso2-basePath: /inventory/v1.0
+x-wso2-transports:
+ - http
+ - https
+x-wso2-response-cache:
+  enabled: false
+  cacheTimeoutInSeconds: 300
