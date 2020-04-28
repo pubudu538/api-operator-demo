@@ -29,7 +29,7 @@ data:
   #Maximum number of replicas for the Horizontal Pod Auto-scale. Default->  hpaMaxReplicas: "5"
   hpaMaxReplicas: "5"
   #Avg CPU utilization(%) to spin up the next pod.  Default->  hpaTargetAverageUtilizationCPU: "50"
-  hpaTargetAverageUtilizationCPU: "50"
+  hpaTargetAverageUtilizationCPU: "15"
   #Required CPU usage for pods.   Default-> resourceRequestCPU: "1000m"
   resourceRequestCPU: "750m"
   #Required Memory usage pods can use.   Default->  resourceRequestMemory: "512Mi"

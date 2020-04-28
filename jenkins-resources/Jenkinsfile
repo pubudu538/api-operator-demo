@@ -1,0 +1,42 @@
+pipeline {
+     
+   agent any
+  
+   environment{
+      APINAME = "<branch name of the API>"
+      REPO="<enter the repository name> eg: orgname/reponame"
+   }
+   
+   stages {
+      stage('Preparation') {   
+         steps{
+               git branch: "$APINAME",
+               url: "https://github.com/${REPO}.git",
+               credentialsId: '<credential-id>'
+         }
+      }
+       stage('Releasing a new API version to GitHub') {
+         steps {
+            echo "Deploying new version of API"
+            withCredentials([usernamePassword(credentialsId: '<credential-id>', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                sh 'sh <path to>/git-release.sh $APINAME $USER $PASS $REPO'                        
+            }
+         }
+      }     
+     
+      stage('Deploying API to Kubernetes') {
+         steps {
+            echo "Deploying to Kubernetes"
+            sh 'apictl set --mode k8s'
+            sh 'sh <path to>/deploying-api.sh $APINAME'
+         }
+      }
+   }
+   
+   post {
+      always { 
+         cleanWs()
+      }
+    }
+}
+
