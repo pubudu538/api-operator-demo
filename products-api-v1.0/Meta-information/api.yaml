@@ -8,7 +8,7 @@ context: /product/v1.0
 contextTemplate: /product/{version}
 tags: []
 documents: []
-lastUpdated: Apr 28, 2020, 9:02:39 AM
+lastUpdated: Apr 28, 2020, 9:19:23 AM
 availableTiers:
  -
   name: Bronze
@@ -34,14 +34,13 @@ availableSubscriptionLevelPolicies: []
 uriTemplates: []
 apiHeaderChanged: false
 apiResourcePatternsChanged: false
-status: CREATED
+status: PUBLISHED
 visibility: public
 gatewayLabels: []
 endpointSecured: false
 endpointAuthDigest: false
 transports: http,https
 advertiseOnly: false
-apiOwner: admin
 subscriptionAvailability: all_tenants
 corsConfiguration:
   corsConfigurationEnabled: false
@@ -61,7 +60,7 @@ corsConfiguration:
    - DELETE
    - PATCH
    - OPTIONS
-endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http://products"},"production_endpoints":{"url":"http://products"}}'
+endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/products-ep"},"production_endpoints":{"url":"http:\/\/products-ep"}}'
 responseCache: Disabled
 cacheTimeout: 300
 implementation: ENDPOINT
@@ -84,4 +83,4 @@ enableSchemaValidation: false
 apiCategories: []
 accessControl: all
 rating: 0.0
-isLatest: false
+isLatest: true

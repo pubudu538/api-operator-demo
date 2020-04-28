@@ -9,68 +9,41 @@ security:
  -
   default: []
 paths:
-  /*:
+  /products:
     get:
+      parameters: []
       responses:
         200:
-          description: OK
+          description: ok
       security:
        -
         default: []
       x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
+      x-throttling-tier: null
       x-wso2-application-security:
         security-types:
          - oauth2
         optional: false
-    put:
+  /products/{productId}:
+    get:
+      parameters:
+       -
+        name: productId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: string
       responses:
         200:
-          description: OK
+          description: ok
       security:
        -
         default: []
       x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
-      x-wso2-application-security:
-        security-types:
-         - oauth2
-        optional: false
-    post:
-      responses:
-        200:
-          description: OK
-      security:
-       -
-        default: []
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
-      x-wso2-application-security:
-        security-types:
-         - oauth2
-        optional: false
-    delete:
-      responses:
-        200:
-          description: OK
-      security:
-       -
-        default: []
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
-      x-wso2-application-security:
-        security-types:
-         - oauth2
-        optional: false
-    patch:
-      responses:
-        200:
-          description: OK
-      security:
-       -
-        default: []
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
+      x-throttling-tier: null
       x-wso2-application-security:
         security-types:
          - oauth2
@@ -104,11 +77,11 @@ x-wso2-cors:
    - OPTIONS
 x-wso2-production-endpoints:
   urls:
-   - http://products
+   - http://products-ep
   type: http
 x-wso2-sandbox-endpoints:
   urls:
-   - http://products
+   - http://products-ep
   type: http
 x-wso2-basePath: /product/v1.0
 x-wso2-transports:
