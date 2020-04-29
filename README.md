@@ -18,11 +18,22 @@ Copy the bash scripts in jenkins-resources/ to a location in Jenkins.
 
 Make sure they can be accessed by the Jenkins user.
 
+
 ### Configure build job - Multibranch pipeline
 
 Go to Jenkins *New Item -> Multibranch Pipeline -> Create*
 
-- Configure the GitHub repository that the APIs should be fetched from.
+![Alt text](./images/build.jpg)
+
+Configure the GitHub repository that the APIs should be fetched from.
+
+![Alt text](./images/branch_config.jpg)
+
+In the build configuration section, point the Jenkinsfile path in the GitHub repository.
+
+![Alt text](./images/jenkinsfile_config.jpg)
+
+Once you create the job, it will index the branches and create pipeline jobs.
 
 ### GitHub repository
 
@@ -42,13 +53,9 @@ Note: In each branch, you have to change the following varibles.
 - REPO: The repository APIs are being fetched (org/repo format)
 - you may find placeholders to mention the paths to bash scripts we places in Jenkins machine in previous step. Make sure to give correct paths to those bashfiles within the *Jenkinsfile*
 
-
 ### Setup API Manager and Analytics portal
 
 Use the introductions mention in [this document](https://github.com/pubudu538/api-operator-demo/tree/master/wso2apim-with-analytics) to install API Manager with analytics in the Kubernetes cluster.
-
-
-
 
 ### Install API Operator
 
