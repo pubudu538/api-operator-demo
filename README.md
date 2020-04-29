@@ -4,9 +4,13 @@
 
 - CI/CD Server (Jenkins)
 - Version control system (GitHub)
-- API Operator v1.1.0 distribution
-- API Controller v3.1.0 (CLI distribution)
+- API Operator [v1.1.0 distribution](https://github.com/wso2/k8s-api-operator/releases/download/v1.1.0/k8s-api-operator-1.1.0.zip)
+- API Controller [v3.1.0](https://wso2.com/api-management/tooling/) (CLI distribution)
 - API Manager installed
+
+### CI/CD Flow
+
+![Alt text](./images/process_cicd.jpg)
 
 ### Configure Jenkins
 
@@ -40,6 +44,9 @@ Note: In each branch, you have to change the following varibles.
 
 
 ### Setup API Manager and Analytics portal
+
+Use the introductions mention in [this document](https://github.com/pubudu538/api-operator-demo/tree/master/wso2apim-with-analytics) to install API Manager with analytics in the Kubernetes cluster.
+
 
 
 
