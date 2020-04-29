@@ -10,7 +10,6 @@ for d in */ ; do
     mkdir -p $d/Interceptors
     mkdir -p $d/libs
     dir="--from-file=$d $dir"
-    echo "$dir"
 done
 
 if [ "$output" = "$api" ]; then
